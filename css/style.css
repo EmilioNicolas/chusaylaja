@@ -169,32 +169,26 @@ strong {
     inset: 0;
     background-image: url('../img/hero-large.jpg');
     background-size: cover;
-    background-position: center 20%;
-    filter: brightness(0.45) saturate(0.8);
+    background-position: center 15%;
+    filter: brightness(0.75) saturate(0.9);
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at center, rgba(10, 8, 7, 0.2) 0%, rgba(10, 8, 7, 0.7) 100%),
-        linear-gradient(to bottom, transparent 70%, var(--black));
+        radial-gradient(ellipse at center top, transparent 20%, rgba(10, 8, 7, 0.35) 70%),
+        linear-gradient(to bottom, rgba(10, 8, 7, 0.15) 0%, transparent 30%, transparent 80%, var(--black) 100%);
 }
 
 /* Gold frame border like the invitation */
 .hero-frame {
     position: absolute;
-    inset: 12px;
-    border: 1px solid var(--gold-border);
+    inset: 10px;
+    border: 2px solid var(--gold);
     pointer-events: none;
     z-index: 1;
-}
-
-.hero-frame::before {
-    content: '';
-    position: absolute;
-    inset: 4px;
-    border: 1px solid rgba(197, 160, 40, 0.15);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content {
@@ -204,20 +198,26 @@ strong {
     max-width: 700px;
 }
 
+/* Shared text shadow for legibility over photo */
+.hero-content * {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
 /* Family names — Cinzel uppercase, wide tracking */
 .hero-families {
     font-family: var(--font-serif-display);
-    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    font-size: clamp(0.8rem, 2.2vw, 1rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 5px;
     color: var(--gold);
     margin-bottom: 0.3rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-invite {
     font-family: var(--font-body);
-    font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
     color: var(--cream);
     font-style: italic;
     line-height: 1.6;
@@ -232,23 +232,22 @@ strong {
 .hero-name {
     display: block;
     font-family: var(--font-script);
-    font-size: clamp(3.5rem, 12vw, 7rem);
+    font-size: clamp(4rem, 14vw, 8rem);
     font-weight: 700;
-    line-height: 0.9;
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 2px 8px rgba(197, 160, 40, 0.3));
+    line-height: 0.85;
+    color: var(--gold);
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(197, 160, 40, 0.25);
 }
 
 .hero-con {
     display: block;
     font-family: var(--font-body);
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     font-style: italic;
     color: var(--cream);
-    margin: 0.3rem 0;
+    margin: 0.4rem 0;
 }
 
 /* Event details */
@@ -258,37 +257,39 @@ strong {
 
 .hero-date {
     font-family: var(--font-serif-display);
-    font-size: clamp(0.7rem, 1.8vw, 0.85rem);
-    font-weight: 600;
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--gold);
     margin-bottom: 0.2rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-time {
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-style: italic;
     color: var(--cream);
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .hero-venue {
     font-family: var(--font-serif-display);
-    font-size: clamp(0.75rem, 1.8vw, 0.9rem);
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: var(--gold);
     margin-bottom: 0.1rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
 }
 
 .hero-location {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-style: italic;
-    color: var(--cream-dim);
+    color: var(--cream);
 }
 
 /* Countdown */
@@ -298,8 +299,10 @@ strong {
     gap: 2rem;
     margin-bottom: 2rem;
     padding: 1.2rem 2rem;
-    border-top: 1px solid var(--gold-border);
-    border-bottom: 1px solid var(--gold-border);
+    background: rgba(0, 0, 0, 0.35);
+    border-top: 1px solid rgba(197, 160, 40, 0.5);
+    border-bottom: 1px solid rgba(197, 160, 40, 0.5);
+    backdrop-filter: blur(4px);
 }
 
 .countdown-item {
@@ -310,12 +313,13 @@ strong {
 
 .countdown-number {
     font-family: var(--font-serif-display);
-    font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
-    color: var(--gold-light);
+    color: var(--white);
     line-height: 1;
     min-width: 2.5ch;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
 .countdown-label {
@@ -323,8 +327,9 @@ strong {
     font-size: 0.55rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: var(--cream-dim);
+    color: var(--gold);
     margin-top: 0.4rem;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .countdown-ended {
@@ -688,7 +693,7 @@ strong {
         padding: 5rem 1.5rem 2.5rem;
     }
 
-    .hero-frame { inset: 8px; }
+    .hero-frame { inset: 6px; border-width: 1.5px; }
 
     .section-frame {
         padding: 2.5rem 1.5rem;
@@ -723,16 +728,4 @@ strong {
     }
 }
 
-/* ========================================
-   SUBTLE FILM GRAIN OVERLAY
-   ======================================== */
-body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.025;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    background-size: 256px;
-}
+/* Film grain removed — clean look matching the invitation */
