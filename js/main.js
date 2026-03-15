@@ -1,5 +1,5 @@
-// Wedding countdown
-const WEDDING_DATE = new Date('2026-10-03T13:00:00+02:00');
+// Wedding countdown — 3 Oct 2026, 18:00 CEST
+const WEDDING_DATE = new Date('2026-10-03T18:00:00+02:00');
 
 function updateCountdown() {
     const now = new Date();
@@ -24,27 +24,26 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Smooth scroll for anchor links
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({ behavior: 'smooth' });
-            // Close mobile menu if open
             document.getElementById('nav-links').classList.remove('active');
             document.getElementById('nav-toggle').classList.remove('active');
         }
     });
 });
 
-// Sticky nav on scroll
+// Sticky nav
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 100);
 });
 
-// Mobile menu toggle
+// Mobile menu
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
 navToggle.addEventListener('click', () => {
@@ -55,22 +54,19 @@ navToggle.addEventListener('click', () => {
 // Copy IBAN
 const copyBtn = document.getElementById('copy-iban');
 copyBtn.addEventListener('click', () => {
-    const iban = 'ES3021037074080030096678';
-    navigator.clipboard.writeText(iban).then(() => {
+    navigator.clipboard.writeText('ES3021037074080030096678').then(() => {
         copyBtn.classList.add('copied');
         setTimeout(() => copyBtn.classList.remove('copied'), 2000);
     });
 });
 
-// Scroll reveal animations
+// Scroll reveal
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.15 });
 
-document.querySelectorAll('.section-inner, .event-card, .dresscode-badges, .iban-card').forEach(el => {
-    observer.observe(el);
-});
+document.querySelectorAll('.section-inner').forEach(el => observer.observe(el));
