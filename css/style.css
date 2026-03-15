@@ -242,27 +242,26 @@ strong {
     text-align: center;
     isolation: isolate;
     overflow: hidden;
+    background:
+        radial-gradient(1200px 700px at 50% 18%, rgba(210, 161, 74, 0.2), rgba(8, 5, 7, 0.35) 55%, rgba(8, 5, 7, 0.88) 100%);
 }
 
 .hero-image {
     position: absolute;
     inset: 0;
     background-image: url('../img/hero-large.jpg');
-    background-size: cover;
-    background-position: center 12%;
-    filter: brightness(0.93) contrast(1.06) saturate(1.06);
-    transform: scale(1.03);
-    animation: heroPan 22s ease-in-out infinite alternate;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    filter: brightness(0.97) contrast(1.03) saturate(1.02);
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 52% 30%, rgba(255, 220, 150, 0.20) 0%, rgba(255, 220, 150, 0.06) 22%, rgba(0, 0, 0, 0) 48%),
-        radial-gradient(circle at 10% 50%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 45%),
-        radial-gradient(circle at 90% 50%, rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0) 45%),
-        linear-gradient(180deg, rgba(8, 5, 7, 0.22) 0%, rgba(8, 5, 7, 0.07) 28%, rgba(8, 5, 7, 0.42) 100%);
+        radial-gradient(circle at 50% 20%, rgba(255, 220, 150, 0.18) 0%, rgba(255, 220, 150, 0.06) 24%, rgba(0, 0, 0, 0) 56%),
+        linear-gradient(180deg, rgba(8, 5, 7, 0.16) 0%, rgba(8, 5, 7, 0.08) 30%, rgba(8, 5, 7, 0.48) 100%);
 }
 
 .hero-frame {
@@ -301,37 +300,35 @@ strong {
 .hero-content {
     position: relative;
     z-index: 2;
-    width: min(92vw, 760px);
+    width: min(90vw, 640px);
     margin-top: clamp(42px, 8vh, 84px);
-    padding: clamp(2rem, 3vw, 2.8rem) clamp(1.2rem, 2.4vw, 2.4rem) 2.2rem;
+    padding: clamp(1.7rem, 2.6vw, 2.3rem) clamp(1.1rem, 2.2vw, 2.2rem) 2rem;
     border-radius: var(--radius-lg);
     background:
-        linear-gradient(180deg, rgba(24, 14, 16, 0.38) 0%, rgba(24, 14, 16, 0.5) 45%, rgba(8, 5, 7, 0.75) 100%);
+        linear-gradient(180deg, rgba(24, 14, 16, 0.22) 0%, rgba(24, 14, 16, 0.34) 48%, rgba(8, 5, 7, 0.64) 100%);
     backdrop-filter: blur(3px);
     box-shadow:
-        0 22px 60px rgba(0, 0, 0, 0.36),
-        inset 0 0 0 1px rgba(230, 200, 130, 0.22);
+        0 18px 50px rgba(0, 0, 0, 0.32),
+        inset 0 0 0 1px rgba(230, 200, 130, 0.16);
 }
 
 .hero-content * {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
 }
 
-.hero-families {
-    font-family: var(--font-display);
-    font-size: clamp(0.88rem, 2.05vw, 1.08rem);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: clamp(3px, 0.7vw, 6px);
-    color: var(--gold-soft);
-    margin-bottom: 0.35rem;
-}
-
 .hero-invite {
-    font-size: clamp(1.1rem, 2.6vw, 1.45rem);
-    line-height: 1.35;
+    display: inline-block;
+    margin: 0 auto 1.05rem;
+    padding: 0.24rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 200, 130, 0.46);
+    background: rgba(8, 5, 7, 0.38);
+    font-family: var(--font-display);
+    font-size: clamp(0.78rem, 2.1vw, 0.92rem);
+    text-transform: uppercase;
+    letter-spacing: clamp(2px, 0.4vw, 3.4px);
+    line-height: 1.2;
     color: rgba(247, 241, 229, 0.94);
-    margin-bottom: 1.4rem;
 }
 
 .hero-names {
@@ -559,6 +556,66 @@ strong {
     transform: scaleX(-1);
 }
 
+.section-photo {
+    --photo-ratio: 3 / 2;
+    aspect-ratio: var(--photo-ratio);
+    width: min(100%, 700px);
+    margin: 0 auto 1.65rem;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    position: relative;
+    background:
+        linear-gradient(145deg, rgba(210, 161, 74, 0.16) 0%, rgba(61, 15, 29, 0.42) 42%, rgba(8, 5, 7, 0.74) 100%);
+    box-shadow:
+        0 16px 30px rgba(0, 0, 0, 0.24),
+        inset 0 0 0 1px rgba(230, 200, 130, 0.16);
+}
+
+.section-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 16% 20%, rgba(255, 255, 255, 0.08), transparent 26%),
+        radial-gradient(circle at 82% 70%, rgba(255, 255, 255, 0.06), transparent 24%),
+        repeating-linear-gradient(
+            115deg,
+            rgba(0, 0, 0, 0.08) 0 2px,
+            rgba(0, 0, 0, 0) 2px 8px
+        );
+}
+
+.section-photo::after {
+    content: attr(data-caption);
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    padding: 0.22rem 0.58rem;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 200, 130, 0.46);
+    background: rgba(8, 5, 7, 0.52);
+    color: rgba(247, 241, 229, 0.9);
+    font-family: var(--font-display);
+    font-size: 0.58rem;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+.ratio-16-9 {
+    --photo-ratio: 16 / 9;
+}
+
+.ratio-4-5 {
+    --photo-ratio: 4 / 5;
+    width: min(100%, 430px);
+}
+
+.ratio-4-3 {
+    --photo-ratio: 4 / 3;
+    width: min(100%, 560px);
+}
+
 .section-body {
     max-width: 670px;
     margin: 0 auto;
@@ -696,76 +753,74 @@ strong {
 }
 
 /* ============================================
-   IBAN card
+   Gift / IBAN
    ============================================ */
 
-.iban-card {
-    margin-top: 1.9rem;
-    display: inline-flex;
-    flex-direction: column;
+.iban-inline {
+    margin-top: 1.55rem;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.72rem;
-    padding: clamp(1rem, 2.8vw, 1.55rem) clamp(1rem, 3vw, 2.2rem);
-    border-radius: 18px;
-    border: 1px solid var(--line);
-    background: var(--panel);
-    box-shadow:
-        0 14px 26px rgba(0, 0, 0, 0.26),
-        inset 0 0 0 1px rgba(230, 200, 130, 0.14);
+    justify-content: center;
+    gap: 0.6rem;
 }
 
-.iban-label {
-    font-family: var(--font-display);
-    font-size: 0.62rem;
-    text-transform: uppercase;
-    letter-spacing: 3.2px;
-    color: rgba(247, 241, 229, 0.72);
-}
-
-.iban-number {
-    font-family: var(--font-body);
-    font-size: clamp(1.03rem, 2.4vw, 1.34rem);
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: #ffefc8;
-}
-
-.btn-copy {
-    min-height: 40px;
-    padding: 0.42rem 1.4rem;
-    border-radius: 999px;
-    border: 1px solid rgba(230, 200, 130, 0.68);
-    background: rgba(230, 200, 130, 0.08);
-    color: #f2dca8;
+.iban-inline-label {
     font-family: var(--font-display);
     font-size: 0.62rem;
     text-transform: uppercase;
     letter-spacing: 2.6px;
-    cursor: pointer;
-    transition: transform 180ms var(--ease), background 180ms var(--ease), color 180ms var(--ease);
+    color: rgba(247, 241, 229, 0.74);
 }
 
-.btn-copy:hover {
-    transform: translateY(-1px);
-    background: rgba(230, 200, 130, 0.2);
+.iban-number {
+    font-family: var(--font-body);
+    font-size: clamp(0.98rem, 2vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffefc8;
+}
+
+.btn-copy-inline {
+    min-height: 32px;
+    padding: 0.25rem 0.82rem;
+    border-radius: 999px;
+    border: 1px solid rgba(230, 200, 130, 0.52);
+    background: rgba(230, 200, 130, 0.06);
+    color: #f2dca8;
+    font-family: var(--font-display);
+    font-size: 0.56rem;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    cursor: pointer;
+    transition: background 180ms var(--ease), color 180ms var(--ease), border-color 180ms var(--ease);
+}
+
+.btn-copy-inline:hover {
+    border-color: rgba(230, 200, 130, 0.78);
+    background: rgba(230, 200, 130, 0.16);
     color: #fff3d6;
 }
 
-.btn-copy .copy-check {
+.btn-copy-inline .copy-check {
     display: none;
 }
 
-.btn-copy.copied {
-    background: rgba(230, 200, 130, 0.26);
+.btn-copy-inline.copied {
+    background: rgba(230, 200, 130, 0.25);
     color: #fff8e7;
 }
 
-.btn-copy.copied .copy-text {
+.btn-copy-inline.copied .copy-text {
     display: none;
 }
 
-.btn-copy.copied .copy-check {
+.btn-copy-inline.copied .copy-check {
     display: inline;
+}
+
+.confirmar-btn {
+    margin-top: 1.7rem;
 }
 
 /* ============================================
@@ -840,28 +895,24 @@ strong {
     }
 }
 
-.hero-families {
+.hero-invite {
     animation: fadeInUp 700ms ease 130ms both;
 }
 
-.hero-invite {
-    animation: fadeInUp 700ms ease 260ms both;
-}
-
 .hero-names {
-    animation: fadeInUp 700ms ease 430ms both;
+    animation: fadeInUp 700ms ease 300ms both;
 }
 
 .hero-details {
-    animation: fadeInUp 700ms ease 600ms both;
+    animation: fadeInUp 700ms ease 470ms both;
 }
 
 .countdown {
-    animation: fadeInUp 700ms ease 770ms both;
+    animation: fadeInUp 700ms ease 640ms both;
 }
 
 .scroll-indicator {
-    animation: fadeInUp 700ms ease 940ms both, bounce 2.5s ease infinite 1.2s;
+    animation: fadeInUp 700ms ease 810ms both, bounce 2.5s ease infinite 1.2s;
 }
 
 /* ============================================
@@ -895,7 +946,7 @@ strong {
 
 @media (max-width: 900px) {
     .hero-content {
-        width: min(94vw, 720px);
+        width: min(92vw, 620px);
     }
 
     .section-frame {
@@ -946,14 +997,16 @@ strong {
 
     .hero-image {
         background-image: url('../img/hero-mobile.jpg');
-        background-position: center 18%;
-        filter: brightness(0.9) contrast(1.05) saturate(1.06);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center 8%;
+        filter: brightness(0.95) contrast(1.03) saturate(1.02);
     }
 
     .hero-overlay {
         background:
-            radial-gradient(circle at 52% 24%, rgba(255, 220, 150, 0.15) 0%, rgba(255, 220, 150, 0) 40%),
-            linear-gradient(180deg, rgba(8, 5, 7, 0.16) 0%, rgba(8, 5, 7, 0.12) 22%, rgba(8, 5, 7, 0.54) 100%);
+            radial-gradient(circle at 52% 24%, rgba(255, 220, 150, 0.14) 0%, rgba(255, 220, 150, 0) 42%),
+            linear-gradient(180deg, rgba(8, 5, 7, 0.12) 0%, rgba(8, 5, 7, 0.09) 30%, rgba(8, 5, 7, 0.58) 100%);
     }
 
     .hero-frame {
@@ -994,6 +1047,16 @@ strong {
         font-size: clamp(1.24rem, 6.2vw, 1.9rem);
     }
 
+    .section-photo {
+        margin-bottom: 1.2rem;
+        border-radius: 14px;
+    }
+
+    .ratio-4-5,
+    .ratio-4-3 {
+        width: min(100%, 340px);
+    }
+
     .section-body p {
         font-size: clamp(1.08rem, 4.6vw, 1.34rem);
     }
@@ -1004,6 +1067,15 @@ strong {
 
     .iban-number {
         letter-spacing: 0.9px;
+    }
+
+    .iban-inline {
+        flex-direction: column;
+        gap: 0.45rem;
+    }
+
+    .confirmar-btn {
+        margin-top: 1.25rem;
     }
 
     .btn,
@@ -1019,12 +1091,9 @@ strong {
         font-size: 1.9rem;
     }
 
-    .hero-families {
-        letter-spacing: 2.4px;
-    }
-
     .hero-invite {
-        font-size: 1.02rem;
+        font-size: 0.72rem;
+        letter-spacing: 1.7px;
     }
 
     .hero-name {

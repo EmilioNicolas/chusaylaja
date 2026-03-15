@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260315a">
+    <link rel="stylesheet" href="css/style.css?v=20260315b">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
 </head>
 <body>
@@ -28,8 +28,8 @@
                 <li><a href="#historia">Nuestra Historia</a></li>
                 <li><a href="#cuando-donde">Cuándo y Dónde</a></li>
                 <li><a href="#dresscode">Dress Code</a></li>
-                <li><a href="#regalo">El Regalo</a></li>
                 <li><a href="#confirmar" class="nav-cta">Confirmar</a></li>
+                <li><a href="#regalo">El Regalo</a></li>
             </ul>
         </div>
     </nav>
@@ -40,8 +40,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-frame"></div>
         <div class="hero-content">
-            <p class="hero-families">Los Meseguer y los Lajarín</p>
-            <p class="hero-invite">tienen el placer de invitaros<br>a la boda de</p>
+            <p class="hero-invite">Nos casamos</p>
             <h1 class="hero-names">
                 <span class="hero-name">Chusa</span>
                 <span class="hero-con">con</span>
@@ -83,6 +82,7 @@
             <div class="section-inner">
                 <h2 class="section-title">¡Hola a todos!</h2>
                 <div class="section-ornament"></div>
+                <figure class="section-photo ratio-3-2" data-caption="Foto de vuestra historia"></figure>
                 <div class="section-body">
                     <p>Chusa y Laja queremos daros un notición: <strong>¡nos pegamos el "sí quiero"!</strong> Y como no podía ser de otra manera, queremos que nos acompañéis en el que esperamos sea uno de los días más bonitos de nuestra vida.</p>
                     <p>Si estáis leyendo esto es porque habéis llenado nuestra existencia de momentos increíbles, y no nos imaginamos celebrando la vida sin vosotros.</p>
@@ -98,6 +98,7 @@
             <div class="section-inner">
                 <h2 class="section-title">¿Cuándo y Dónde?</h2>
                 <div class="section-ornament"></div>
+                <figure class="section-photo ratio-16-9" data-caption="Foto del lugar"></figure>
                 <div class="event-details">
                     <div class="event-card">
                         <h3>La Fecha</h3>
@@ -134,6 +135,7 @@
             <div class="section-inner">
                 <h2 class="section-title">El "Dress Code"</h2>
                 <div class="section-ornament"></div>
+                <figure class="section-photo ratio-4-5" data-caption="Foto del mood"></figure>
                 <div class="section-body">
                     <p>Olvidaos de las corbatas, los protocolos y las incomodidades.</p>
                     <p>Queremos que el atuendo sea acorde a <strong>una fiesta en la playa</strong>: distendido, cómodo y fresco.</p>
@@ -155,31 +157,9 @@
             <div class="section-inner">
                 <h2 class="section-title">Una Fiesta para Todos</h2>
                 <div class="section-ornament"></div>
+                <figure class="section-photo ratio-3-2" data-caption="Foto en familia"></figure>
                 <div class="section-body">
                     <p>Será una celebración <strong>family-friendly</strong>. Los más pequeños de la casa son más que bienvenidos; tendrán espacio para disfrutar tanto como nosotros y algún entretenimiento para que los papis puedan relajarse del todo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- El Regalo -->
-    <section class="section" id="regalo">
-        <div class="section-frame">
-            <div class="section-inner">
-                <h2 class="section-title">Operación<br>"Pasar Desapercibidos"</h2>
-                <div class="section-ornament"></div>
-                <div class="section-body">
-                    <p>Vuestra presencia es el mejor regalo, pero si además queréis tener un detalle con nosotros, aquí os dejamos nuestro IBAN.</p>
-                    <p>No os vamos a engañar: el objetivo es comprarnos <strong>un chalet en La Moraleja</strong> y <strong>un Ferrari amarillo chillón</strong> para pasar totalmente desapercibidos por el barrio.</p>
-                    <p>Así que ya sabéis... <strong>¡toca rascarse el bolsillo por una buena causa!</strong></p>
-                </div>
-                <div class="iban-card">
-                    <span class="iban-label">IBAN</span>
-                    <span class="iban-number" id="iban">ES30 2103 7074 0800 3009 6678</span>
-                    <button class="btn-copy" id="copy-iban" title="Copiar IBAN">
-                        <span class="copy-text">Copiar</span>
-                        <span class="copy-check">Copiado ✓</span>
-                    </button>
                 </div>
             </div>
         </div>
@@ -191,13 +171,36 @@
             <div class="section-inner">
                 <h2 class="section-title">Confirma tu Asistencia</h2>
                 <div class="section-ornament"></div>
+                <figure class="section-photo ratio-3-2" data-caption="Foto para la confirmación"></figure>
                 <div class="section-body">
                     <p>Para que podamos organizarlo todo de diez, os pedimos que nos confirméis vuestra asistencia (y cuántos peques os acompañan) lo antes posible.</p>
                     <p class="section-quote">"Sin prisa pero sin pausa"</p>
                 </div>
-                <a href="#" class="btn btn-large" id="rsvp-btn">
+                <a href="#" class="btn btn-large confirmar-btn" id="rsvp-btn">
                     Confirmar Asistencia
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- El Regalo -->
+    <section class="section" id="regalo">
+        <div class="section-frame">
+            <div class="section-inner">
+                <h2 class="section-title">Si Queréis Tener un Detalle</h2>
+                <div class="section-ornament"></div>
+                <figure class="section-photo ratio-4-3" data-caption="Foto final"></figure>
+                <div class="section-body">
+                    <p>Vuestra presencia es el mejor regalo. Si os apetece tener un detalle con nosotros, os dejamos aquí el IBAN.</p>
+                </div>
+                <p class="iban-inline">
+                    <span class="iban-inline-label">IBAN</span>
+                    <span class="iban-number" id="iban">ES30 2103 7074 0800 3009 6678</span>
+                    <button class="btn-copy-inline" id="copy-iban" title="Copiar IBAN">
+                        <span class="copy-text">Copiar</span>
+                        <span class="copy-check">Copiado ✓</span>
+                    </button>
+                </p>
             </div>
         </div>
     </section>
@@ -210,6 +213,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=20260315a"></script>
+    <script src="js/main.js?v=20260315b"></script>
 </body>
 </html>
