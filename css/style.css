@@ -105,6 +105,9 @@ strong {
     inset: 0 0 auto;
     z-index: 1000;
     padding: 1rem 0;
+    background: rgba(8, 5, 7, 0.9);
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(8px) saturate(1.05);
     transition: padding 260ms var(--ease), background 260ms var(--ease), border-color 260ms var(--ease), box-shadow 260ms var(--ease);
 }
 
@@ -121,7 +124,7 @@ strong {
 .nav.scrolled {
     padding: 0.62rem 0;
     border-bottom: 1px solid var(--line);
-    background: rgba(8, 5, 7, 0.78);
+    background: rgba(8, 5, 7, 0.94);
     backdrop-filter: blur(10px) saturate(1.05);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
@@ -265,36 +268,7 @@ strong {
 }
 
 .hero-frame {
-    position: absolute;
-    inset: clamp(10px, 1.4vw, 16px);
-    border: 1px solid rgba(230, 200, 130, 0.72);
-    border-radius: 14px;
-    box-shadow: inset 0 0 0 1px rgba(230, 200, 130, 0.22), inset 0 0 50px rgba(0, 0, 0, 0.36);
-    pointer-events: none;
-}
-
-.hero-frame::before,
-.hero-frame::after {
-    content: '';
-    position: absolute;
-    width: clamp(40px, 8vw, 78px);
-    height: clamp(40px, 8vw, 78px);
-    border: 1px solid rgba(230, 200, 130, 0.8);
-    pointer-events: none;
-}
-
-.hero-frame::before {
-    left: 12px;
-    top: 12px;
-    border-right: none;
-    border-bottom: none;
-}
-
-.hero-frame::after {
-    right: 12px;
-    bottom: 12px;
-    border-left: none;
-    border-top: none;
+    display: none;
 }
 
 .hero-content {
@@ -1007,11 +981,6 @@ strong {
         background:
             radial-gradient(circle at 52% 24%, rgba(255, 220, 150, 0.14) 0%, rgba(255, 220, 150, 0) 42%),
             linear-gradient(180deg, rgba(8, 5, 7, 0.12) 0%, rgba(8, 5, 7, 0.09) 30%, rgba(8, 5, 7, 0.58) 100%);
-    }
-
-    .hero-frame {
-        inset: 8px;
-        border-radius: 12px;
     }
 
     .hero-content {
