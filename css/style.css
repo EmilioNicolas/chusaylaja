@@ -287,7 +287,7 @@ strong {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 16%;
-    filter: brightness(0.96) contrast(1.03) saturate(1.02);
+    filter: brightness(0.8) contrast(1.05) saturate(0.98);
 }
 
 .hero-content::after {
@@ -296,12 +296,13 @@ strong {
     inset: 0;
     z-index: -1;
     background:
-        radial-gradient(circle at 50% 18%, rgba(255, 220, 150, 0.2) 0%, rgba(255, 220, 150, 0.06) 24%, rgba(0, 0, 0, 0) 54%),
-        linear-gradient(180deg, rgba(8, 5, 7, 0.22) 0%, rgba(8, 5, 7, 0.1) 30%, rgba(8, 5, 7, 0.58) 100%);
+        radial-gradient(circle at 50% 24%, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.26) 46%, rgba(0, 0, 0, 0.52) 100%),
+        linear-gradient(180deg, rgba(8, 5, 7, 0.58) 0%, rgba(8, 5, 7, 0.2) 24%, rgba(8, 5, 7, 0.2) 66%, rgba(8, 5, 7, 0.62) 100%),
+        linear-gradient(90deg, rgba(8, 5, 7, 0.56) 0%, rgba(8, 5, 7, 0.16) 22%, rgba(8, 5, 7, 0.16) 78%, rgba(8, 5, 7, 0.56) 100%);
 }
 
 .hero-content * {
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.55);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.82), 0 0 26px rgba(0, 0, 0, 0.48);
 }
 
 .hero-invite {
@@ -333,8 +334,9 @@ strong {
     background: linear-gradient(180deg, #f5e0ae 0%, #dbb96f 36%, #b47e2f 100%);
     -webkit-background-clip: text;
     background-clip: text;
+    -webkit-text-stroke: 0.4px rgba(60, 38, 9, 0.65);
     color: transparent;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
+    filter: drop-shadow(0 7px 22px rgba(0, 0, 0, 0.72));
 }
 
 .hero-con {
@@ -636,6 +638,13 @@ strong {
     margin-bottom: 1.8rem;
 }
 
+.event-intro {
+    max-width: 700px;
+    margin: 0 auto 1.2rem;
+    font-size: clamp(1.04rem, 2vw, 1.2rem);
+    color: rgba(247, 241, 229, 0.9);
+}
+
 .event-card {
     padding: clamp(1.1rem, 2.1vw, 1.6rem);
     border-radius: var(--radius-md);
@@ -839,6 +848,15 @@ strong {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.footer-signature {
+    margin-top: 0.45rem;
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: rgba(247, 241, 229, 0.62);
 }
 
 /* ============================================
