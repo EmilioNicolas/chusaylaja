@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20260316a">
+    <link rel="stylesheet" href="css/style.css?v=20260316b">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
 </head>
 <body>
@@ -194,13 +194,15 @@
                 <figure class="section-photo ratio-4-3" data-caption="Foto final"></figure>
                 <div class="section-body">
                     <p>Vuestra presencia es el mejor regalo. Si os apetece tener un detalle con nosotros, os dejamos aquí el IBAN.</p>
+                    <p class="regalo-joke">Y sí, seguimos con la idea de pasar desapercibidos con un chalet en La Moraleja y un Lambo amarillo chillón.</p>
                 </div>
                 <p class="iban-inline">
-                    <span class="iban-inline-label">IBAN</span>
                     <span class="iban-number" id="iban">ES30 2103 7074 0800 3009 6678</span>
-                    <button class="btn-copy-inline" id="copy-iban" title="Copiar IBAN">
-                        <span class="copy-text">Copiar</span>
-                        <span class="copy-check">Copiado ✓</span>
+                    <button class="btn-copy-inline" id="copy-iban" title="Copiar IBAN" aria-label="Copiar IBAN">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <rect x="9" y="9" width="11" height="11" rx="2"></rect>
+                            <rect x="4" y="4" width="11" height="11" rx="2"></rect>
+                        </svg>
                     </button>
                 </p>
             </div>
@@ -215,6 +217,6 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=20260316a"></script>
+    <script src="js/main.js?v=20260316b"></script>
 </body>
 </html>

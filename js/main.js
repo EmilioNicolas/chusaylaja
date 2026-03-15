@@ -53,12 +53,20 @@ navToggle.addEventListener('click', () => {
 
 // Copy IBAN
 const copyBtn = document.getElementById('copy-iban');
-copyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText('ES3021037074080030096678').then(() => {
-        copyBtn.classList.add('copied');
-        setTimeout(() => copyBtn.classList.remove('copied'), 2000);
+if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText('ES3021037074080030096678').then(() => {
+            copyBtn.classList.add('copied');
+            copyBtn.setAttribute('title', 'Copiado');
+            copyBtn.setAttribute('aria-label', 'Copiado');
+            setTimeout(() => {
+                copyBtn.classList.remove('copied');
+                copyBtn.setAttribute('title', 'Copiar IBAN');
+                copyBtn.setAttribute('aria-label', 'Copiar IBAN');
+            }, 1200);
+        });
     });
-});
+}
 
 // Scroll reveal
 document.body.classList.add('has-reveal');
