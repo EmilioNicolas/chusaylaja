@@ -1,0 +1,781 @@
+/* ============================================
+   CHUSA Y LA JA — Wedding Website
+   Style: 70s Rock / Vintage Concert Poster
+   ============================================ */
+
+/* --- CSS Variables --- */
+:root {
+    --black: #0d0d0d;
+    --dark: #1a1a1a;
+    --dark-lighter: #252525;
+    --gold: #d4a848;
+    --gold-light: #e8c76a;
+    --gold-dark: #b8903a;
+    --red: #8b2232;
+    --red-light: #a0283a;
+    --red-dark: #6e1a28;
+    --cream: #f5f0e8;
+    --cream-dim: #d4cfc7;
+    --white: #ffffff;
+
+    --font-display: 'Monoton', cursive;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Cormorant Garamond', serif;
+    --font-script: 'Great Vibes', cursive;
+
+    --max-width: 900px;
+    --section-padding: 5rem 1.5rem;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--cream);
+    background-color: var(--black);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--gold-light);
+}
+
+strong {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+/* --- Navigation --- */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.4s ease;
+}
+
+.nav.scrolled {
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(212, 168, 72, 0.2);
+}
+
+.nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-family: var(--font-script);
+    font-size: 1.8rem;
+    color: var(--gold) !important;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--cream-dim);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.nav-cta {
+    background: var(--gold);
+    color: var(--dark) !important;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.nav-cta:hover {
+    background: var(--gold-light);
+    color: var(--dark) !important;
+}
+
+/* Hamburger */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at center, rgba(139, 34, 50, 0.4) 0%, transparent 70%),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(139, 34, 50, 0.15) 3px,
+            rgba(139, 34, 50, 0.15) 6px
+        ),
+        linear-gradient(180deg, var(--red-dark) 0%, var(--black) 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a848' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 120%, rgba(212, 168, 72, 0.1) 0%, transparent 50%),
+        linear-gradient(to bottom, transparent 60%, var(--black));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem 1.5rem;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 1s ease 0.3s both;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    color: var(--gold);
+    line-height: 1.1;
+    letter-spacing: 4px;
+    text-shadow:
+        0 0 20px rgba(212, 168, 72, 0.3),
+        0 0 40px rgba(212, 168, 72, 0.15),
+        2px 2px 0 var(--gold-dark);
+    animation: fadeInUp 1s ease 0.5s both;
+}
+
+.hero-subtitle {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--cream-dim);
+    font-style: italic;
+    margin: 0.5rem 0 2rem;
+    animation: fadeInUp 1s ease 0.7s both;
+}
+
+.hero-names {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease 0.9s both;
+}
+
+.hero-name {
+    font-family: var(--font-script);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    color: var(--cream);
+}
+
+.hero-ampersand {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--gold);
+}
+
+/* Countdown */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease 1.1s both;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-number {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    min-width: 3ch;
+    text-align: center;
+}
+
+.countdown-label {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-top: 0.3rem;
+}
+
+.countdown-ended {
+    font-family: var(--font-script);
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--cream-dim);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeInUp 1s ease 1.3s both, bounce 2s ease infinite 2.3s;
+}
+
+/* --- Sections --- */
+.section {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.section-dark {
+    background: var(--dark);
+}
+
+.section-dark::before,
+.section-dark::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+}
+
+.section-dark::before { top: 0; }
+.section-dark::after { bottom: 0; }
+
+.section-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.section-inner.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+}
+
+.section-divider {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1rem auto 2rem;
+}
+
+.section-text {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+    color: var(--cream);
+}
+
+.section-text-small {
+    font-size: 1.1rem;
+    color: var(--cream-dim);
+}
+
+/* --- Historia --- */
+.historia-content p {
+    max-width: 650px;
+    margin: 0 auto 1.5rem;
+    font-size: 1.25rem;
+}
+
+/* --- Event Details --- */
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.event-card {
+    background: rgba(212, 168, 72, 0.05);
+    border: 1px solid rgba(212, 168, 72, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.event-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--cream-dim);
+    margin-bottom: 0.5rem;
+}
+
+.event-highlight {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.event-address {
+    font-size: 1rem;
+    color: var(--cream-dim);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+.map-container {
+    margin: 2rem 0;
+    border: 1px solid rgba(212, 168, 72, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- Dress Code --- */
+.dresscode-content p {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    font-size: 1.25rem;
+}
+
+.dresscode-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease 0.3s;
+}
+
+.dresscode-badges.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.badge {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(212, 168, 72, 0.3);
+    border-radius: 100px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    background: rgba(212, 168, 72, 0.05);
+}
+
+/* --- Regalo / IBAN --- */
+.regalo-content p {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    font-size: 1.2rem;
+}
+
+.iban-container {
+    margin-top: 2.5rem;
+}
+
+.iban-card {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--dark-lighter);
+    border: 2px solid var(--gold-dark);
+    border-radius: 12px;
+    padding: 1.5rem 2.5rem;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.iban-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Concert ticket perforated edges */
+.iban-card::before,
+.iban-card::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    width: 12px;
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 6px,
+        var(--black) 6px,
+        var(--black) 12px
+    );
+}
+
+.iban-card::before { left: -1px; }
+.iban-card::after { right: -1px; }
+
+.iban-label {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--gold);
+}
+
+.iban-number {
+    font-family: var(--font-heading);
+    font-size: clamp(0.85rem, 3vw, 1.2rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    word-break: break-all;
+}
+
+.btn-copy {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--gold);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-copy:hover {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+.btn-copy .copy-check { display: none; }
+.btn-copy.copied .copy-text { display: none; }
+.btn-copy.copied .copy-check { display: inline; }
+.btn-copy.copied {
+    background: var(--gold);
+    color: var(--dark);
+}
+
+/* --- RSVP Section --- */
+.section-rsvp {
+    background:
+        radial-gradient(ellipse at center bottom, rgba(139, 34, 50, 0.3) 0%, transparent 60%),
+        var(--black);
+    padding: 6rem 1.5rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--dark) !important;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(212, 168, 72, 0.3);
+}
+
+.btn-lg {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+}
+
+/* --- Footer --- */
+.footer {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(212, 168, 72, 0.15);
+}
+
+.footer-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.footer-message {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--cream-dim);
+}
+
+.footer-names {
+    font-family: var(--font-script);
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin: 0.5rem 0;
+}
+
+.footer-hearts {
+    color: var(--red-light);
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+}
+
+/* --- Animations --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-8px); }
+    60% { transform: translateY(-4px); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+/* Gold shimmer on hero title */
+.hero-title {
+    background: linear-gradient(
+        90deg,
+        var(--gold) 0%,
+        var(--gold-light) 25%,
+        var(--white) 50%,
+        var(--gold-light) 75%,
+        var(--gold) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation:
+        fadeInUp 1s ease 0.5s both,
+        shimmer 4s linear infinite 2s;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 4rem 1.2rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(13, 13, 13, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+    }
+
+    .countdown {
+        gap: 1rem;
+    }
+
+    .hero-names {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+
+    .iban-card {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .iban-card::before,
+    .iban-card::after {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .countdown-number {
+        font-size: 1.6rem;
+    }
+
+    .countdown-label {
+        font-size: 0.6rem;
+    }
+}
+
+/* --- Vintage texture overlay on body --- */
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+}
+
+/* --- Star decorators --- */
+.section-title::before,
+.section-title::after {
+    content: '★';
+    font-size: 0.6em;
+    vertical-align: middle;
+    margin: 0 0.5rem;
+    opacity: 0.5;
+}
