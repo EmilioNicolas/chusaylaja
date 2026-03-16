@@ -563,6 +563,7 @@ strong {
     width: 100%;
     height: auto;
     display: block;
+    filter: sepia(0.12) saturate(0.88) contrast(1.05) brightness(0.95);
 }
 
 .section-photo {
