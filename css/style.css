@@ -976,6 +976,21 @@ strong {
     transform: scaleX(-1);
 }
 
+.modal-photo {
+    width: 100%;
+    margin: 0 0 1.5rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+.modal-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(0.22) saturate(0.82) contrast(1.06) brightness(0.93);
+}
+
 .modal-body {
     text-align: center;
 }
