@@ -195,16 +195,8 @@ strong {
     transform: scaleX(1);
 }
 
-.nav-cta {
-    padding: 0.5rem 1.15rem;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: linear-gradient(180deg, rgba(210, 161, 74, 0.24) 0%, rgba(210, 161, 74, 0.08) 100%);
-    color: #ffedc2 !important;
-}
-
-.nav-cta::after {
-    display: none;
+.nav-highlight {
+    color: var(--gold) !important;
 }
 
 .nav-toggle {
@@ -1240,8 +1232,8 @@ strong {
         letter-spacing: 2.8px;
     }
 
-    .nav-links .nav-cta {
-        margin-top: 0.2rem;
+    .nav-links .nav-highlight {
+        color: var(--gold) !important;
     }
 
     .hero {
