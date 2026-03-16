@@ -33,6 +33,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({ behavior: 'smooth' });
             document.getElementById('nav-links').classList.remove('active');
             document.getElementById('nav-toggle').classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
     });
 });
@@ -49,6 +50,15 @@ const navLinks = document.getElementById('nav-links');
 navToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     navToggle.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        navLinks.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
 });
 
 // Copy IBAN
