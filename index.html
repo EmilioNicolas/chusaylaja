@@ -24,7 +24,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=1773694101">
+    <link rel="stylesheet" href="css/style.css?v=1773694275">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎸</text></svg>">
 </head>
 <body>
@@ -135,9 +135,14 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <a href="https://www.google.com/maps/place/La+Mestiza/@37.6636752,-0.7338776,15z/data=!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6636752!4d-0.7338776!16s" target="_blank" rel="noopener" class="btn">
-                    Cómo Llegar
-                </a>
+                <div class="btn-row">
+                    <a href="https://www.google.com/maps/place/La+Mestiza/@37.6636752,-0.7338776,15z/data=!4m6!3m5!1s0xd6319131373a8f9:0x29e9db40c7c90066!8m2!3d37.6636752!4d-0.7338776!16s" target="_blank" rel="noopener" class="btn">
+                        Cómo Llegar
+                    </a>
+                    <button class="btn" id="btn-por-que-aqui">
+                        ¿Por qué aquí?
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -232,6 +237,23 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=1773694101"></script>
+    <!-- Modal: ¿Por qué aquí? -->
+    <div class="modal-overlay" id="modal-por-que" aria-hidden="true">
+        <div class="modal">
+            <button class="modal-close" id="modal-close" aria-label="Cerrar">&times;</button>
+            <h3 class="modal-title">¿Por qué La Manga?</h3>
+            <div class="modal-ornament"></div>
+            <div class="modal-body">
+                <p>¿Por qué nos casamos aquí? Porque el Mar Menor es donde más felices somos.</p>
+                <p>Aquí vivimos los primeros meses de Bruno. No siempre fue fácil — los comienzos nunca lo son — pero entre paseos frente al agua y el olor a salitre, descubrimos que en la calma de este mar es donde realmente somos nosotros.</p>
+                <p>Desde que nos conocimos, el mar ha sido el testigo de cada paso importante. Cada buena noticia, cada decisión de futuro, cada momento de paz ha tenido como fondo el horizonte de nuestra laguna.</p>
+                <p>Sabemos que nuestro mar no ha pasado por su mejor momento, pero los que lo amamos estamos viendo una mejoría alucinante. Queremos que veáis lo que nosotros vemos: que el <strong>3 de octubre, con su luz de otoño, el Mar Menor lucirá más bonito que nunca</strong> para todos vosotros.</p>
+                <p>Gracias por formar parte de nuestra vida y por venir a celebrar nuestro amor en el lugar que nos lo ha dado todo.</p>
+                <p class="modal-signature">María Jesús, Paco Pepe & Bruno</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js?v=1773694275"></script>
 </body>
 </html>

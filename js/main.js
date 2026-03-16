@@ -76,6 +76,33 @@ window.addEventListener('resize', () => {
     }
 });
 
+// Modal: ¿Por qué aquí?
+const modalOverlay = document.getElementById('modal-por-que');
+const btnOpen = document.getElementById('btn-por-que-aqui');
+const btnClose = document.getElementById('modal-close');
+
+if (btnOpen && modalOverlay) {
+    btnOpen.addEventListener('click', () => {
+        modalOverlay.classList.add('active');
+        modalOverlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    });
+
+    const closeModal = () => {
+        modalOverlay.classList.remove('active');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    btnClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) closeModal();
+    });
+}
+
 // Copy IBAN
 const copyBtn = document.getElementById('copy-iban');
 const ibanToast = document.getElementById('iban-toast');
