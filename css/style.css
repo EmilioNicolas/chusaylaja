@@ -245,7 +245,7 @@ strong {
     text-align: center;
     isolation: isolate;
     overflow: hidden;
-    padding-top: clamp(24px, 4vh, 44px);
+    padding-top: 0;
     padding-bottom: clamp(18px, 3vh, 36px);
     background:
         radial-gradient(1200px 700px at 50% 18%, rgba(210, 161, 74, 0.2), rgba(8, 5, 7, 0.35) 55%, rgba(8, 5, 7, 0.88) 100%);
@@ -267,7 +267,7 @@ strong {
     position: relative;
     z-index: 2;
     width: min(92vw, 760px);
-    margin-top: clamp(30px, 6vh, 58px);
+    margin-top: clamp(16px, 3vh, 30px);
     padding: clamp(1.7rem, 2.6vw, 2.3rem) clamp(1.1rem, 2.2vw, 2.2rem) 2rem;
     border-radius: var(--radius-lg);
     isolation: isolate;
@@ -333,7 +333,8 @@ strong {
     font-family: var(--font-script);
     font-weight: 700;
     font-size: clamp(4.4rem, 13vw, 8.2rem);
-    line-height: 0.82;
+    line-height: 1;
+    padding-bottom: 0.15em;
     letter-spacing: 0.5px;
     background: linear-gradient(180deg, #f5e0ae 0%, #dbb96f 36%, #b47e2f 100%);
     -webkit-background-clip: text;
@@ -1010,7 +1011,7 @@ strong {
     }
 
     .hero-content {
-        margin-top: 54px;
+        margin-top: 16px;
         padding: 1.45rem 1rem 1.5rem;
         border-radius: 18px;
     }
