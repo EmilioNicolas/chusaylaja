@@ -55,18 +55,22 @@ navToggle.addEventListener('click', () => {
 const copyBtn = document.getElementById('copy-iban');
 const ibanToast = document.getElementById('iban-toast');
 if (copyBtn) {
+    let hideToastTimer;
     copyBtn.addEventListener('click', () => {
         navigator.clipboard.writeText('ES3021037074080030096678').then(() => {
             copyBtn.classList.add('copied');
             copyBtn.setAttribute('title', 'Copiado');
             copyBtn.setAttribute('aria-label', 'Copiado');
-            if (ibanToast) ibanToast.classList.add('visible');
-            setTimeout(() => {
+            if (ibanToast) {
+                ibanToast.classList.add('visible');
+                clearTimeout(hideToastTimer);
+            }
+            hideToastTimer = setTimeout(() => {
                 copyBtn.classList.remove('copied');
                 copyBtn.setAttribute('title', 'Copiar IBAN');
                 copyBtn.setAttribute('aria-label', 'Copiar IBAN');
                 if (ibanToast) ibanToast.classList.remove('visible');
-            }, 2000);
+            }, 900);
         });
     });
 }
