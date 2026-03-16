@@ -421,11 +421,12 @@ strong {
 }
 
 .scroll-indicator {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 42px;
     height: 42px;
+    margin: 0.8rem auto 0;
     border-radius: 50%;
     border: 1px solid rgba(230, 200, 130, 0.44);
     color: rgba(230, 200, 130, 0.92);
