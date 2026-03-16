@@ -563,7 +563,12 @@ strong {
     width: 100%;
     height: auto;
     display: block;
-    filter: sepia(0.12) saturate(0.88) contrast(1.05) brightness(0.95);
+    filter: sepia(0.22) saturate(0.82) contrast(1.06) brightness(0.93);
+}
+
+/* Extra vintage push for confirmar photo */
+#confirmar .section-photo img {
+    filter: sepia(0.38) saturate(0.75) contrast(1.08) brightness(0.9);
 }
 
 .section-photo {
