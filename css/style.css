@@ -344,12 +344,18 @@ strong {
     line-height: 1.08;
     padding-bottom: 0.24em;
     letter-spacing: 0.5px;
-    background: linear-gradient(180deg, #f8e9c1 0%, #e8cb86 40%, #ca9a4b 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-stroke: 0.25px rgba(52, 33, 8, 0.48);
-    color: transparent;
+    color: #d4a84a;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.62));
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+    .hero-name {
+        background: linear-gradient(180deg, #f8e9c1 0%, #e8cb86 40%, #ca9a4b 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-stroke: 0.25px rgba(52, 33, 8, 0.48);
+        color: transparent;
+    }
 }
 
 .hero-con {
@@ -1029,10 +1035,16 @@ strong {
     font-size: clamp(2.3rem, 5vw, 3.2rem);
     line-height: 1.12;
     padding-bottom: 0.24em;
-    background: linear-gradient(180deg, #f4deb0 0%, #d4ab5f 42%, #b1782e 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #d4a84a;
+}
+
+@supports (-webkit-background-clip: text) or (background-clip: text) {
+    .footer-names {
+        background: linear-gradient(180deg, #f4deb0 0%, #d4ab5f 42%, #b1782e 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
 }
 
 .footer-signature {
