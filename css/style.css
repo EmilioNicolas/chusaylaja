@@ -240,13 +240,14 @@ strong {
 .hero {
     position: relative;
     min-height: 100svh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     text-align: center;
     isolation: isolate;
     overflow: hidden;
-    padding-top: 0;
-    padding-bottom: clamp(18px, 3vh, 36px);
+    padding-top: clamp(74px, 9vh, 112px);
+    padding-bottom: clamp(30px, 5.5vh, 72px);
     background:
         radial-gradient(1200px 700px at 50% 18%, rgba(210, 161, 74, 0.2), rgba(8, 5, 7, 0.35) 55%, rgba(8, 5, 7, 0.88) 100%);
 }
@@ -267,11 +268,12 @@ strong {
     position: relative;
     z-index: 2;
     width: min(92vw, 760px);
-    margin-top: clamp(16px, 3vh, 30px);
-    padding: clamp(2.5rem, 4vw, 3.5rem) clamp(1.1rem, 2.2vw, 2.2rem) clamp(2.5rem, 4vw, 3rem);
+    min-height: clamp(700px, 72svh, 860px);
+    margin-top: clamp(10px, 2vh, 22px);
+    padding: clamp(2.3rem, 3.8vw, 3.2rem) clamp(1.1rem, 2.2vw, 2.2rem) clamp(2.45rem, 4.2vw, 3.25rem);
     border-radius: var(--radius-lg);
     isolation: isolate;
-    overflow: visible;
+    overflow: hidden;
     background: rgba(8, 5, 7, 0.36);
     box-shadow:
         0 18px 50px rgba(0, 0, 0, 0.32),
@@ -304,9 +306,9 @@ strong {
     border-radius: inherit;
     overflow: hidden;
     background:
-        radial-gradient(circle at 50% 22%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.42) 100%),
-        linear-gradient(180deg, rgba(8, 5, 7, 0.46) 0%, rgba(8, 5, 7, 0.16) 24%, rgba(8, 5, 7, 0.16) 66%, rgba(8, 5, 7, 0.5) 100%),
-        linear-gradient(90deg, rgba(8, 5, 7, 0.44) 0%, rgba(8, 5, 7, 0.12) 22%, rgba(8, 5, 7, 0.12) 78%, rgba(8, 5, 7, 0.44) 100%);
+        radial-gradient(circle at 50% 22%, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.16) 44%, rgba(0, 0, 0, 0.38) 100%),
+        linear-gradient(180deg, rgba(8, 5, 7, 0.38) 0%, rgba(8, 5, 7, 0.13) 25%, rgba(8, 5, 7, 0.13) 70%, rgba(8, 5, 7, 0.46) 100%),
+        linear-gradient(90deg, rgba(8, 5, 7, 0.4) 0%, rgba(8, 5, 7, 0.1) 22%, rgba(8, 5, 7, 0.1) 78%, rgba(8, 5, 7, 0.4) 100%);
 }
 
 .hero-content * {
@@ -329,7 +331,7 @@ strong {
 }
 
 .hero-names {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3.05rem;
 }
 
 .hero-name {
@@ -337,8 +339,8 @@ strong {
     font-family: var(--font-script);
     font-weight: 700;
     font-size: clamp(4.4rem, 13vw, 8.2rem);
-    line-height: 1;
-    padding-bottom: 0.15em;
+    line-height: 1.08;
+    padding-bottom: 0.24em;
     letter-spacing: 0.5px;
     background: linear-gradient(180deg, #f8e9c1 0%, #e8cb86 40%, #ca9a4b 100%);
     -webkit-background-clip: text;
@@ -350,14 +352,14 @@ strong {
 
 .hero-con {
     display: block;
-    margin: 0.18rem 0 0.32rem;
+    margin: 0.22rem 0 0.42rem;
     font-style: italic;
     font-size: clamp(1.25rem, 2.4vw, 1.6rem);
     color: rgba(247, 241, 229, 0.92);
 }
 
 .hero-details {
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.9rem;
 }
 
 .hero-date,
@@ -865,11 +867,12 @@ strong {
 }
 
 .footer-names {
+    display: inline-block;
     font-family: var(--font-script);
     font-weight: 700;
     font-size: clamp(2.3rem, 5vw, 3.2rem);
-    line-height: 1.2;
-    padding-bottom: 0.15em;
+    line-height: 1.12;
+    padding-bottom: 0.24em;
     background: linear-gradient(180deg, #f4deb0 0%, #d4ab5f 42%, #b1782e 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -1019,7 +1022,8 @@ strong {
 
     .hero {
         min-height: 100dvh;
-        padding-top: 18px;
+        padding-top: calc(64px + env(safe-area-inset-top));
+        padding-bottom: clamp(20px, 5vh, 44px);
     }
 
     .hero-image {
@@ -1031,26 +1035,37 @@ strong {
     }
 
     .hero-content {
-        margin-top: 16px;
-        padding: 1.45rem 1rem 1.5rem;
-        border-radius: 18px;
+        margin-top: 8px;
+        min-height: clamp(590px, 70dvh, 760px);
+        padding: 1.58rem 1rem 1.74rem;
+        border-radius: 20px;
     }
 
     .hero-content::before {
         background-image: url('../img/hero-mobile.jpg');
-        background-position: center 12%;
-        filter: brightness(0.96) contrast(1.04) saturate(1.04);
+        background-position: center 14%;
+        filter: brightness(0.98) contrast(1.04) saturate(1.04);
     }
 
     .hero-content::after {
         background:
-            radial-gradient(circle at 50% 18%, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.14) 44%, rgba(0, 0, 0, 0.34) 100%),
-            linear-gradient(180deg, rgba(8, 5, 7, 0.34) 0%, rgba(8, 5, 7, 0.11) 26%, rgba(8, 5, 7, 0.11) 72%, rgba(8, 5, 7, 0.46) 100%),
-            linear-gradient(90deg, rgba(8, 5, 7, 0.34) 0%, rgba(8, 5, 7, 0.08) 22%, rgba(8, 5, 7, 0.08) 78%, rgba(8, 5, 7, 0.34) 100%);
+            radial-gradient(circle at 50% 18%, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.12) 44%, rgba(0, 0, 0, 0.3) 100%),
+            linear-gradient(180deg, rgba(8, 5, 7, 0.28) 0%, rgba(8, 5, 7, 0.1) 27%, rgba(8, 5, 7, 0.1) 72%, rgba(8, 5, 7, 0.4) 100%),
+            linear-gradient(90deg, rgba(8, 5, 7, 0.3) 0%, rgba(8, 5, 7, 0.08) 22%, rgba(8, 5, 7, 0.08) 78%, rgba(8, 5, 7, 0.3) 100%);
+    }
+
+    .hero-names {
+        margin-bottom: 2.35rem;
+    }
+
+    .hero-details {
+        margin-bottom: 1.55rem;
     }
 
     .hero-name {
         font-size: clamp(3.4rem, 16vw, 5.5rem);
+        line-height: 1.1;
+        padding-bottom: 0.24em;
         -webkit-text-stroke: 0.12px rgba(45, 28, 6, 0.36);
     }
 
