@@ -710,6 +710,12 @@ strong {
     overflow: hidden;
     border: 1px solid var(--line);
     box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    isolation: isolate;
+}
+
+.map-container iframe {
+    display: block;
+    border-radius: inherit;
 }
 
 /* ============================================
