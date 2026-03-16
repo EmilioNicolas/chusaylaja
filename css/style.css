@@ -889,9 +889,11 @@ strong {
 
 .modal {
     position: relative;
-    width: min(92vw, 620px);
-    max-height: 85vh;
+    width: min(92vw, 680px);
+    max-height: 90vh;
     overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 3vw, 2.5rem);
     border-radius: var(--radius-lg);
     border: 1px solid var(--line);
@@ -903,6 +905,10 @@ strong {
         inset 0 0 0 1px rgba(230, 200, 130, 0.14);
     transform: translateY(20px);
     transition: transform 300ms var(--ease);
+}
+
+.modal::-webkit-scrollbar {
+    display: none;
 }
 
 .modal-overlay.active .modal {
