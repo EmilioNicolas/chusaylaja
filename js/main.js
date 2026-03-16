@@ -1,5 +1,5 @@
 // Wedding countdown — 3 Oct 2026, 18:00 CEST
-const WEDDING_DATE = new Date('2026-10-03T18:00:00+02:00');
+const WEDDING_DATE = new Date('2026-10-03T13:00:00+02:00');
 
 function updateCountdown() {
     const now = new Date();
