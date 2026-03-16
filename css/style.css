@@ -291,7 +291,7 @@ strong {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 16%;
-    filter: brightness(0.8) contrast(1.05) saturate(0.98);
+    filter: brightness(0.86) contrast(1.05) saturate(1.01);
 }
 
 .hero-content::after {
@@ -300,9 +300,9 @@ strong {
     inset: 0;
     z-index: -1;
     background:
-        radial-gradient(circle at 50% 24%, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.26) 46%, rgba(0, 0, 0, 0.52) 100%),
-        linear-gradient(180deg, rgba(8, 5, 7, 0.58) 0%, rgba(8, 5, 7, 0.2) 24%, rgba(8, 5, 7, 0.2) 66%, rgba(8, 5, 7, 0.62) 100%),
-        linear-gradient(90deg, rgba(8, 5, 7, 0.56) 0%, rgba(8, 5, 7, 0.16) 22%, rgba(8, 5, 7, 0.16) 78%, rgba(8, 5, 7, 0.56) 100%);
+        radial-gradient(circle at 50% 22%, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0.2) 46%, rgba(0, 0, 0, 0.42) 100%),
+        linear-gradient(180deg, rgba(8, 5, 7, 0.46) 0%, rgba(8, 5, 7, 0.16) 24%, rgba(8, 5, 7, 0.16) 66%, rgba(8, 5, 7, 0.5) 100%),
+        linear-gradient(90deg, rgba(8, 5, 7, 0.44) 0%, rgba(8, 5, 7, 0.12) 22%, rgba(8, 5, 7, 0.12) 78%, rgba(8, 5, 7, 0.44) 100%);
 }
 
 .hero-content * {
@@ -336,12 +336,12 @@ strong {
     line-height: 1;
     padding-bottom: 0.15em;
     letter-spacing: 0.5px;
-    background: linear-gradient(180deg, #f5e0ae 0%, #dbb96f 36%, #b47e2f 100%);
+    background: linear-gradient(180deg, #f8e9c1 0%, #e8cb86 40%, #ca9a4b 100%);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-stroke: 0.4px rgba(60, 38, 9, 0.65);
+    -webkit-text-stroke: 0.25px rgba(52, 33, 8, 0.48);
     color: transparent;
-    filter: drop-shadow(0 7px 22px rgba(0, 0, 0, 0.72));
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.62));
 }
 
 .hero-con {
@@ -814,6 +814,21 @@ strong {
     transform: scale(0.96);
     background: rgba(230, 200, 130, 0.2);
     color: #fff8e7;
+}
+
+.iban-toast {
+    font-family: var(--font-display);
+    font-size: 0.62rem;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #f0d08a;
+    opacity: 0;
+    transition: opacity 300ms var(--ease);
+    pointer-events: none;
+}
+
+.iban-toast.visible {
+    opacity: 1;
 }
 
 .confirmar-btn {
