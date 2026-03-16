@@ -344,7 +344,7 @@ strong {
     line-height: 1.08;
     padding-bottom: 0.24em;
     letter-spacing: 0.5px;
-    color: #d4a84a;
+    color: #fff;
     filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.62));
 }
 
@@ -1051,7 +1051,7 @@ strong {
     font-size: clamp(2.3rem, 5vw, 3.2rem);
     line-height: 1.12;
     padding-bottom: 0.24em;
-    color: #d4a84a;
+    color: #fff;
 }
 
 @supports (-webkit-background-clip: text) or (background-clip: text) {
