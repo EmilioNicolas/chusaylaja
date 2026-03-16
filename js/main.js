@@ -24,20 +24,6 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('nav-links').classList.remove('active');
-            document.getElementById('nav-toggle').classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
-    });
-});
-
 // Sticky nav
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
@@ -47,17 +33,46 @@ window.addEventListener('scroll', () => {
 // Mobile menu
 const navToggle = document.getElementById('nav-toggle');
 const navLinks = document.getElementById('nav-links');
-navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    navToggle.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
+const closeMobileMenu = () => {
+    if (navLinks) navLinks.classList.remove('active');
+    if (navToggle) navToggle.classList.remove('active');
+    document.body.classList.remove('menu-open');
+};
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+
+        const target = document.querySelector(href);
+        if (!target) return;
+
+        e.preventDefault();
+        closeMobileMenu();
+
+        requestAnimationFrame(() => {
+            const headerOffset = nav ? nav.offsetHeight + 8 : 8;
+            const targetTop = target.getBoundingClientRect().top + window.scrollY - headerOffset;
+            window.scrollTo({
+                top: Math.max(0, targetTop),
+                behavior: 'smooth'
+            });
+        });
+    });
 });
 
 window.addEventListener('resize', () => {
     if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-        navToggle.classList.remove('active');
-        document.body.classList.remove('menu-open');
+        closeMobileMenu();
     }
 });
 
