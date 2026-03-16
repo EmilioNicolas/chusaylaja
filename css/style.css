@@ -239,7 +239,6 @@ strong {
 
 .hero {
     position: relative;
-    min-height: 100svh;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -248,8 +247,7 @@ strong {
     overflow: hidden;
     padding-top: clamp(74px, 9vh, 112px);
     padding-bottom: clamp(30px, 5.5vh, 72px);
-    background:
-        radial-gradient(1200px 700px at 50% 18%, rgba(210, 161, 74, 0.2), rgba(8, 5, 7, 0.35) 55%, rgba(8, 5, 7, 0.88) 100%);
+    background: var(--night);
 }
 
 .hero-image {
@@ -295,7 +293,7 @@ strong {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 16%;
-    filter: brightness(0.86) contrast(1.05) saturate(1.01);
+    filter: brightness(0.62) contrast(1.08) saturate(1.01);
 }
 
 .hero-content::after {
@@ -1031,7 +1029,6 @@ strong {
     }
 
     .hero {
-        min-height: 100dvh;
         padding-top: calc(64px + env(safe-area-inset-top));
         padding-bottom: clamp(20px, 5vh, 44px);
     }
@@ -1054,7 +1051,7 @@ strong {
     .hero-content::before {
         background-image: url('../img/hero-mobile.jpg');
         background-position: center 14%;
-        filter: brightness(0.98) contrast(1.04) saturate(1.04);
+        filter: brightness(0.65) contrast(1.06) saturate(1.04);
     }
 
     .hero-content::after {
